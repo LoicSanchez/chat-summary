@@ -17,8 +17,19 @@ var message = "Fetching context variables failed";
 var chatSum = new x_snc_samurizer.chat_sum();
 message = chatSum.readChat(record.getUniqueValue());
 
-//message = "[code]" + cardHTML + "[/code]";
+message = "<p>Here is the summary</p><p>"+message+"</p>"+
+	'<div class="sn-cs-image-message sn-control-chat" type="requester"><img width="120px" tabindex="0" src="https://outboundaidemo.service-now.com/api/now/v1/cs/media/tKR13jB6LxQrJz4b3fTjjEHtSBeKVHKiVVHZNX74YUXowhUTLfSSKX3l7go1cyPr"></div>';
+
+message = "[code]" + message + "[/code]";
 success = true;
+
+
+sn_connect.Conversation.get(record.channel_metadata_document, record.channel_metadata_table)
+		.sendMessage({
+			body: message,
+			system: false,
+			internal: false
+		});
 
 answer = {
 	success: success,
@@ -29,7 +40,7 @@ answer = {
         <sys_created_on>2022-06-14 14:50:09</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>b0a33f82470c1510b2c0cc48946d433e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Chat Samuraizer</sys_name>
         <sys_overrides/>
         <sys_package display_value="chat summarizer" source="x_snc_samurizer">99b93bb997c8d110b893350e6253af8d</sys_package>
@@ -37,7 +48,7 @@ answer = {
         <sys_scope display_value="chat summarizer">99b93bb997c8d110b893350e6253af8d</sys_scope>
         <sys_update_name>quickactions_action_b0a33f82470c1510b2c0cc48946d433e</sys_update_name>
         <sys_updated_by>loic</sys_updated_by>
-        <sys_updated_on>2022-06-14 14:50:09</sys_updated_on>
+        <sys_updated_on>2022-06-14 15:23:36</sys_updated_on>
         <table_name>interaction</table_name>
     </quickactions_action>
 </record_update>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="quickactions_workspace_action">
+    <quickactions_workspace_action action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <apply_to_all_groups>true</apply_to_all_groups>
+        <apply_to_groups/>
+        <auto_submit>true</auto_submit>
+        <condition/>
+        <icon/>
+        <icon_image>94bbfbc6470c1510b2c0cc48946d43c4</icon_image>
+        <name>Samurizer</name>
+        <order>100</order>
+        <parameter_values/>
+        <private_enabled>false</private_enabled>
+        <quick_action display_value="Chat Samuraizer">b0a33f82470c1510b2c0cc48946d433e</quick_action>
+        <sys_class_name>quickactions_workspace_action</sys_class_name>
+        <sys_created_by>loic</sys_created_by>
+        <sys_created_on>2022-06-14 15:21:52</sys_created_on>
+        <sys_id>bff9730a470c1510b2c0cc48946d432c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Samurizer</sys_name>
+        <sys_package display_value="chat summarizer" source="x_snc_samurizer">99b93bb997c8d110b893350e6253af8d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="chat summarizer">99b93bb997c8d110b893350e6253af8d</sys_scope>
+        <sys_update_name>quickactions_workspace_action_bff9730a470c1510b2c0cc48946d432c</sys_update_name>
+        <sys_updated_by>loic</sys_updated_by>
+        <sys_updated_on>2022-06-14 15:21:52</sys_updated_on>
+        <use_custom_icon>true</use_custom_icon>
+    </quickactions_workspace_action>
+</record_update>
