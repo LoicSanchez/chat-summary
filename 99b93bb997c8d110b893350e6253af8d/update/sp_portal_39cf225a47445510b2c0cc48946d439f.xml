@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <css_variables/>
+        <default>false</default>
+        <enable_ais>false</enable_ais>
+        <enable_favorites>false</enable_favorites>
+        <hide_portal_name>false</hide_portal_name>
+        <homepage/>
+        <icon/>
+        <kb_knowledge_base/>
+        <kb_knowledge_page/>
+        <login_page/>
+        <logo/>
+        <notfound_page/>
+        <quick_start_config/>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <search_application/>
+        <search_results_configuration/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu/>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>loic</sys_created_by>
+        <sys_created_on>2022-06-15 04:29:07</sys_created_on>
+        <sys_id>39cf225a47445510b2c0cc48946d439f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Samurizer</sys_name>
+        <sys_package display_value="chat summarizer" source="x_snc_samurizer">99b93bb997c8d110b893350e6253af8d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="chat summarizer">99b93bb997c8d110b893350e6253af8d</sys_scope>
+        <sys_update_name>sp_portal_39cf225a47445510b2c0cc48946d439f</sys_update_name>
+        <sys_updated_by>loic</sys_updated_by>
+        <sys_updated_on>2022-06-15 04:36:41</sys_updated_on>
+        <theme display_value="Samurizer Theme">2f817e9a47445510b2c0cc48946d431b</theme>
+        <title>Samurizer</title>
+        <ts_index_group/>
+        <url_suffix>samurizer</url_suffix>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=39cf225a47445510b2c0cc48946d439f"/>
+</record_update>

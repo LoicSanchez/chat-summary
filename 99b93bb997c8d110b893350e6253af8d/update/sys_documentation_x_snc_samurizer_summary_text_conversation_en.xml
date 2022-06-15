@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="text_conversation" label="Text Conversation" language="en" table="x_snc_samurizer_summary">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>text_conversation</element>
+            <help/>
+            <hint/>
+            <label>Text Conversation</label>
+            <language>en</language>
+            <name>x_snc_samurizer_summary</name>
+            <plural>Text Conversations</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>loic</sys_created_by>
+            <sys_created_on>2022-06-15 04:27:53</sys_created_on>
+            <sys_id>58af2e1a47445510b2c0cc48946d4354</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Text Conversation</sys_name>
+            <sys_package display_value="chat summarizer" source="x_snc_samurizer">99b93bb997c8d110b893350e6253af8d</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="chat summarizer">99b93bb997c8d110b893350e6253af8d</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_samurizer_summary_text_conversation_en</sys_update_name>
+            <sys_updated_by>loic</sys_updated_by>
+            <sys_updated_on>2022-06-15 04:27:53</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
