@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_theme_css_include">
+    <m2m_sp_theme_css_include action="INSERT_OR_UPDATE">
+        <order/>
+        <sp_css_include display_value="ec-theme-global">73001ed71bb8f85047582171604bcbde</sp_css_include>
+        <sp_theme display_value="Samurizer Theme">2f817e9a47445510b2c0cc48946d431b</sp_theme>
+        <sys_class_name>m2m_sp_theme_css_include</sys_class_name>
+        <sys_created_by>loic</sys_created_by>
+        <sys_created_on>2022-06-15 04:37:53</sys_created_on>
+        <sys_id>fae1f2da47445510b2c0cc48946d433f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ec-theme-global.Samurizer Theme</sys_name>
+        <sys_package display_value="chat summarizer" source="x_snc_samurizer">99b93bb997c8d110b893350e6253af8d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="chat summarizer">99b93bb997c8d110b893350e6253af8d</sys_scope>
+        <sys_update_name>m2m_sp_theme_css_include_fae1f2da47445510b2c0cc48946d433f</sys_update_name>
+        <sys_updated_by>loic</sys_updated_by>
+        <sys_updated_on>2022-06-15 04:37:53</sys_updated_on>
+    </m2m_sp_theme_css_include>
+</record_update>
