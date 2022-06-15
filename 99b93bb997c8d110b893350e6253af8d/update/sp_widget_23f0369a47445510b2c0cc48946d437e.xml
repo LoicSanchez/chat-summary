@@ -5,8 +5,6 @@
 	var c = this;
 
 	$rootScope.$on('selectItem', function (event, object) {
-		console.log("received");
-		console.log(object);
 		c.server.get({
 			action: 'select',
 			sysId: object.sysId
@@ -21,16 +19,21 @@
   height: 500px;&#13;
   overflow: scroll;&#13;
   border: 1px lightgrey solid;&#13;
-  border-radius: 20px;&#13;
+  border-radius: 5px;&#13;
   padding: 20px;&#13;
 }&#13;
 .box-summary {&#13;
   width: 600px;&#13;
   margin-left: 40px;&#13;
-  border: 0.1rem lightgrey solid;&#13;
+&#13;
   border-radius: 2rem;&#13;
   padding-bottom: 20px;&#13;
   padding-right: 20px;&#13;
+}&#13;
+.box-header {&#13;
+  border-bottom: 1px lightgrey solid;&#13;
+  margin-bottom: 10px;&#13;
+  padding-bottom: 10px;&#13;
 }&#13;
 &#13;
 .box-message {&#13;
@@ -57,11 +60,18 @@
   align-items: center;&#13;
 }&#13;
 &#13;
-.summary-icon {&#13;
-  border: 1px lightgrey solid;&#13;
-  border-radius: 60px;&#13;
-  padding: 30px;&#13;
+.header {&#13;
   background-color: white;&#13;
+  color: rgb(66, 80, 81);&#13;
+  font-family: "Source Sans Pro", sans-serif;&#13;
+  font-size: 24px;&#13;
+  font-weight: 400;&#13;
+  margin-bottom: 5px;&#13;
+}&#13;
+&#13;
+.summary-icon {&#13;
+&#13;
+  padding: 30px;&#13;
   padding-right: 20px;&#13;
   padding-left: 20px;&#13;
 }&#13;
@@ -74,6 +84,11 @@
   display: block;&#13;
   margin-top: 20px;&#13;
   padding-left: 20px;&#13;
+}&#13;
+&#13;
+.box-separator {&#13;
+  border-top-width: 0.2rem;&#13;
+  margin-top: 10px;&#13;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -92,11 +107,14 @@
         <roles/>
         <script><![CDATA[(function() {
 	//var sysId = $sp.getParameter('sys_id');
+	var TABLE = gs.getProperty("x_snc_samurizer.samurazier.conversation.table");
+	var TEXT_FIELD = gs.getProperty("x_snc_samurizer.samurazier.conversation.textField");
+	var SUMMARY_FIELD = gs.getProperty("x_snc_samurizer.samurazier.conversation.summaryField");
 
 	function init(sysId){
-		var gr = new GlideRecord("x_snc_samurizer_summary");
+		var gr = new GlideRecord(TABLE);
 		if (gr.get(sysId)){
-			var text = gr.text_conversation;
+			var text = gr.getValue(TEXT_FIELD);
 			var split = text.split("\\n");
 
 			data.conversation= [];
@@ -110,7 +128,7 @@
 				}
 			}
 
-			data.summary = gr.getValue("summary");
+			data.summary = gr.getValue(SUMMARY_FIELD);
 		}
 	}
 
@@ -127,28 +145,33 @@
         <sys_created_by>loic</sys_created_by>
         <sys_created_on>2022-06-15 04:34:22</sys_created_on>
         <sys_id>23f0369a47445510b2c0cc48946d437e</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_name>samurizer</sys_name>
         <sys_package display_value="chat summarizer" source="x_snc_samurizer">99b93bb997c8d110b893350e6253af8d</sys_package>
         <sys_policy/>
         <sys_scope display_value="chat summarizer">99b93bb997c8d110b893350e6253af8d</sys_scope>
         <sys_update_name>sp_widget_23f0369a47445510b2c0cc48946d437e</sys_update_name>
         <sys_updated_by>loic</sys_updated_by>
-        <sys_updated_on>2022-06-15 06:08:15</sys_updated_on>
+        <sys_updated_on>2022-06-15 13:33:25</sys_updated_on>
         <template><![CDATA[<div>
-  <p>Samurizer</p>
+  <div class="header">
+    <p><span class="summary-icon"><img src="samurizer%20icon.png" width="80"/> </span> Samurizer</p>
+  </div>
   <div class="placeholder-message" ng-if="data.message">
     {{data.message}}
   </div>
   <div class="container-flex" ng-if="!data.message">
     <div class="box-convo">
+      <div class="box-header">
+        Conversation history
+      </div>
       <div ng-repeat="message in c.data.conversation" class="box-message">
         <span class="message-sender">{{message.sender}}</span><span class="message-value">{{message.value}}</span>
       </div>
     </div>
     <div class="box-summary">
-      <span class="summary-icon"><img src="samurizer%20icon.png" width="80"/> </span>
       <span class="summary-title">Summary</span>
+      <hr class="box-separator" />
       <span class="summary-text">{{c.data.summary}}</span>
     </div>
   </div>
