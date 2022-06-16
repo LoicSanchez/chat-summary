@@ -28,6 +28,34 @@
             <sys_user/>
             <type/>
         </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>2</position>
+            <sys_created_by>loic</sys_created_by>
+            <sys_created_on>2022-06-15 19:45:58</sys_created_on>
+            <sys_id>7cc10ae247009510b2c0cc48946d4362</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_samurizer_summary" sys_domain="global" view="Default view">df20365a47445510b2c0cc48946d43b1</sys_ui_section>
+            <sys_updated_by>loic</sys_updated_by>
+            <sys_updated_on>2022-06-15 19:45:58</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>name</element>
+            <position>3</position>
+            <sys_created_by>loic</sys_created_by>
+            <sys_created_on>2022-06-15 19:46:19</sys_created_on>
+            <sys_id>f1d1cae247009510b2c0cc48946d4303</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_samurizer_summary" sys_domain="global" view="Default view">df20365a47445510b2c0cc48946d43b1</sys_ui_section>
+            <sys_updated_by>loic</sys_updated_by>
+            <sys_updated_on>2022-06-15 19:46:19</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>
             <header>false</header>

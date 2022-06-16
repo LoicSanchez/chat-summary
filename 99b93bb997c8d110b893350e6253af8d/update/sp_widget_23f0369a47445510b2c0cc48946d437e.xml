@@ -12,6 +12,14 @@
 			c.data = r.data;
 		});
 	});
+	
+	c.important = function(message){
+		if (message.important) {
+			return 'important';
+		} else {
+			return '';
+		}
+	};
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>.box-convo {&#13;
@@ -51,6 +59,10 @@
   padding: 10px;&#13;
   border-radius: 10px;&#13;
   margin-bottom: 8px;&#13;
+  overflow-wrap: break-word;&#13;
+}&#13;
+.important .message-value {&#13;
+  background-color: #bcebdb;&#13;
 }&#13;
 &#13;
 .container-flex {&#13;
@@ -122,7 +134,21 @@
 			for (var i=0;i<split.length;i++){
 				if (split[i]!=""){
 					var message = split[i].split(":");
-					var objMessage = {"sender": message[0], "value": message[1]};
+					
+					//cocantenate all after sender
+					//"value": message[1]
+					var messageValue ="";
+					if (message[1]){
+						for (var j=0; j<message[1].length;j++){
+							messageValue = messageValue + message[1][j];
+						}
+					}
+					
+					var objMessage = {"sender": message[0], "value": messageValue};
+					if (message[0].startsWith('\r\n$$')){
+						objMessage.sender = message[0].substring(4, message[0].length);
+						objMessage.important = true;
+					}
 
 					data.conversation.push(objMessage);
 				}
@@ -135,7 +161,7 @@
 	if (input) {
 		init(input.sysId);
 	} else {
-		data.message = "Select a conversation to show the summary";
+		data.message = "Select any content to show its summary";
 	}
 
 
@@ -145,14 +171,14 @@
         <sys_created_by>loic</sys_created_by>
         <sys_created_on>2022-06-15 04:34:22</sys_created_on>
         <sys_id>23f0369a47445510b2c0cc48946d437e</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>46</sys_mod_count>
         <sys_name>samuraizer</sys_name>
         <sys_package display_value="chat summarizer" source="x_snc_samurizer">99b93bb997c8d110b893350e6253af8d</sys_package>
         <sys_policy/>
         <sys_scope display_value="chat summarizer">99b93bb997c8d110b893350e6253af8d</sys_scope>
         <sys_update_name>sp_widget_23f0369a47445510b2c0cc48946d437e</sys_update_name>
         <sys_updated_by>loic</sys_updated_by>
-        <sys_updated_on>2022-06-15 15:02:30</sys_updated_on>
+        <sys_updated_on>2022-06-15 20:15:27</sys_updated_on>
         <template><![CDATA[<div>
   <div class="header">
     <p><span class="summary-icon"><img src="samurizer%20icon.png" width="80"/> </span> Samuraizer</p>
@@ -163,9 +189,9 @@
   <div class="container-flex" ng-if="!data.message">
     <div class="box-convo">
       <div class="box-header">
-        Conversation history
+        Content
       </div>
-      <div ng-repeat="message in c.data.conversation" class="box-message">
+      <div ng-repeat="message in c.data.conversation" class="box-message" ng-class="c.important(message)">
         <span class="message-sender">{{message.sender}}</span><span class="message-value">{{message.value}}</span>
       </div>
     </div>
