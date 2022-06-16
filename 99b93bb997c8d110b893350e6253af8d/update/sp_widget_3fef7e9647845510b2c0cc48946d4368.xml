@@ -112,7 +112,7 @@
 
 	var i=1;
 	while (gr.next()) {
-		var obj = {"name": "Conversation " + i, "sysId": gr.getUniqueValue()};
+		var obj = {"name": gr.getValue('name'), "sysId": gr.getUniqueValue()};
 		data.list.push(obj);
 		i++;
 	}
@@ -123,17 +123,17 @@
         <sys_created_by>loic</sys_created_by>
         <sys_created_on>2022-06-15 05:39:32</sys_created_on>
         <sys_id>3fef7e9647845510b2c0cc48946d4368</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>Conversation list</sys_name>
         <sys_package display_value="chat summarizer" source="x_snc_samurizer">99b93bb997c8d110b893350e6253af8d</sys_package>
         <sys_policy/>
         <sys_scope display_value="chat summarizer">99b93bb997c8d110b893350e6253af8d</sys_scope>
         <sys_update_name>sp_widget_3fef7e9647845510b2c0cc48946d4368</sys_update_name>
         <sys_updated_by>loic</sys_updated_by>
-        <sys_updated_on>2022-06-15 15:33:03</sys_updated_on>
+        <sys_updated_on>2022-06-15 19:48:45</sys_updated_on>
         <template><![CDATA[<div class="list">
   <div class="list-convo-header">
-    My Conversations
+    My Summary List
   </div>
   <div ng-repeat="item in c.data.list" class="list-convo" ng-class="c.isSelected(item)">
     <span ng-click="c.select(item)">{{item.name}}</span>
